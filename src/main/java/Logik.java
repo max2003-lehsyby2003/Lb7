@@ -83,5 +83,10 @@ public  List<Student> filterFakultStudent(List<Student>  students, String fakul)
         temp.sort(Comparator.comparing(Student::getFamil).thenComparing(Student::getImy));
         return temp;
     }
+    public List<Student> printListStudent(List<Student> students){
+
+    students.sort(Comparator.comparing(Student:: getFakul).thenComparing(Student::getDataNarodg));
+return students;
+}
 }
 

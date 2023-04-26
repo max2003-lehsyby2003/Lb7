@@ -85,13 +85,12 @@ public class Main {
 
                     break;
                 case 6:
-                    System.out.println("6. список студентів упорядкований за алфавітом назви факультету, а для студентів одного\" +\n" +
-                            "                    \"факультету – за датою народження");
+                    System.out.println("6. список студентів упорядкований за алфавітом назви факультету, а для студентів одного факультету – за датою народження");
+                    System.out.println("введіть назву файлу");
                     file = sc.next();
                     students = ioFile.readListFromFile(file);
-                    students.sort(Comparator.comparing(Student:: getFakul).thenComparing(Student::getDataNarodg));
 
-                    logik.printStudent(students);
+                    logik.printStudent(logik.printListStudent(students));
                     break;
                 case 7:
                     System.out.println("Выход из программы");
