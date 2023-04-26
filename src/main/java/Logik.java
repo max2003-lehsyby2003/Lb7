@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Logik {
 
+    //вносим данные в список
 public List<Student> createList() {
     List<Student> students = new ArrayList<>();
 
@@ -41,28 +42,25 @@ public List<Student> createList() {
 
     return students;
 }
-    public List<Student> printGroupStudent(List<Student> students, String group) {
-        List<Student> temp = new ArrayList<>();
-        int b = 0;
-        for (Student student : students) {
-            if (student.getGrupa().equals(group)) {
-                temp.add(student);
-            }
+    //вывод данных списка
+    public void printStudent(List<Student> students) {
+        for (Student value : students) {
+            System.out.println(value);
         }
-        temp.sort(Comparator.comparing(Student::getFamil).thenComparing(Student::getImy));
-        return temp;
-    }
-    public  List<Student> filterFakultStudent(List<Student>  students, String fakul) {
-        List<Student> temp = new ArrayList<>();
 
-        for (Student student : students) {
-            if (student.getFakul().equals(fakul)) {
-                temp.add(student);
-            }
-        } return temp;
+    }
+//список студентів заданого факультету;
+public  List<Student> filterFakultStudent(List<Student>  students, String fakul) {
+    List<Student> temp = new ArrayList<>();
+
+    for (Student student : students) {
+        if (student.getFakul().equals(fakul)) {
+            temp.add(student);
+        }
+    } return temp;
 }
 
-
+//список студентів, які народились після заданого року;
     public  List<Student> filterDataNarodg(List<Student> students, int dataNarodg) {
         List<Student> filteredStudents = new ArrayList<>();
         for (Student student : students) {
@@ -71,13 +69,19 @@ public List<Student> createList() {
             }
         }
         return filteredStudents;
-        }
-    public void printStudent(List<Student> students) {
-        for (Student value : students) {
-            System.out.println(value);
-        }
-
     }
 
+    //список навчальної групи в порядку алфавіту;
+    public List<Student> printGroupStudent(List<Student> students, String group) {
+        List<Student> temp = new ArrayList<>();
+
+        for (Student student : students) {
+            if (student.getGrupa().equals(group)) {
+                temp.add(student);
+            }
+        }
+        temp.sort(Comparator.comparing(Student::getFamil).thenComparing(Student::getImy));
+        return temp;
     }
+}
 

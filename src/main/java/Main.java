@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
@@ -33,7 +32,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Вы выбрали пункт 1");
+                    System.out.println("1.Створення/перевірка на існування файла, виведення данних файлу ");
                     System.out.println("Введіть назву файлу");
                     filename = sc.next();
                     ioFile.createFile(filename);
@@ -41,7 +40,7 @@ public class Main {
 
                     break;
                 case 2:
-                    System.out.println("Вы выбрали пункт 2");
+                    System.out.println("2.Запис данних до файлу");
                     System.out.println("Введіть назву файлу");
                     file = sc.next();
                     students = logik.createList();
@@ -49,7 +48,7 @@ public class Main {
                     break;
                 case 3:
 
-                    System.out.println("Вы выбрали пункт 3");
+                    System.out.println("3. список студентів заданого факультету;");
                     System.out.println("введіть назву файлу");
                     file = sc.nextLine();
 
@@ -62,7 +61,7 @@ public class Main {
                     break;
                 case 4:
 
-                    System.out.println("Вы выбрали пункт 4");
+                    System.out.println("4. список студентів, які народились після заданого року;");
 
                     System.out.println("введіть назву файлу");
                     file = sc.next();
@@ -73,7 +72,7 @@ public class Main {
                     logik.printStudent(logik.filterDataNarodg(students, date));
                     break;
                 case 5:
-                    System.out.println("Вы выбрали пункт 5");
+                    System.out.println("5. список навчальної групи в порядку алфавіту;");
 
                     System.out.println("введіть назву файлу");
                     file = sc.next();
@@ -86,11 +85,12 @@ public class Main {
 
                     break;
                 case 6:
-                    System.out.println("введіть назву файлу");
+                    System.out.println("6. список студентів упорядкований за алфавітом назви факультету, а для студентів одного\" +\n" +
+                            "                    \"факультету – за датою народження");
                     file = sc.next();
                     students = ioFile.readListFromFile(file);
                     students.sort(Comparator.comparing(Student:: getFakul).thenComparing(Student::getDataNarodg));
-                    //Arrays.sort(students, Comparator.comparing(Student:: getFakul).thenComparing(Student::getDataNarodg));
+
                     logik.printStudent(students);
                     break;
                 case 7:

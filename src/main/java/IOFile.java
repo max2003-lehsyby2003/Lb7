@@ -57,20 +57,7 @@ public class IOFile {
 
         return students;
     }
-//    public List<Student> readListFromFile(String filename) {
-//        List<Student> students = new ArrayList<>();
-//
-//        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-//            Student line;
-//            while ((line = Student.parse(br.readLine())) != null) {
-//                students.add(line);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return students;
-//    }
+
 
 }
 
