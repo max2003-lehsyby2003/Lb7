@@ -66,7 +66,7 @@ public class Main {
                     System.out.println("введіть назву файлу");
                     file = sc.next();
                     students = ioFile.readListFromFile(file);
-                    System.out.println("Введіть дату год-месяц-день");
+                    System.out.println("Введіть дату год");
                     date = Integer.parseInt(sc.next());
 
                     logik.printStudent(logik.filterDataNarodg(students, date));
