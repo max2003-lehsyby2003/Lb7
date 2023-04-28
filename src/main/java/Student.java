@@ -1,8 +1,9 @@
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Student{
+public class Student implements Serializable {
     private static int count = 0;
     private int id;
     private String famil;
@@ -29,7 +30,7 @@ public class Student{
         this.kurs = kurs;
     }
     public Student() {
-        this( "", "", "", LocalDate.now(), "", "", "", "", 0);
+
     }
 
     @Override

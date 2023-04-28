@@ -6,12 +6,12 @@ public class Logik {
     //вносим данные в список
 public List<Student> createList() {
     List<Student> students = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
 
-    try (Scanner scanner = new Scanner(System.in)) {
         System.out.println("Введите количество записей: ");
         int count = scanner.nextInt();
 
-        scanner.nextLine(); // считываем символ перевода строки
+        scanner.nextLine();
 
         for (int i = 0; i < count; i++) {
             System.out.println("Введите данные для записи " + (i + 1) + ":");
@@ -34,11 +34,11 @@ public List<Student> createList() {
             String telefon = scanner.nextLine();
             System.out.print("Курс: ");
             int kurs = scanner.nextInt();
-            scanner.nextLine(); // считываем символ перевода строки
+            scanner.nextLine();
 
             students.add(new Student(imy, famil, batkiv, dataNarodg, adress, fakul, grupa, telefon, kurs));
         }
-    }
+
 
     return students;
 }
